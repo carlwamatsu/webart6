@@ -1,5 +1,5 @@
-document.addEventListener('mousemove', function(event) {
-    let container = document.getElementById('container');
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('container');
 
     // Array original de GIFs com os caminhos fornecidos
     const gifs = [
@@ -36,23 +36,23 @@ document.addEventListener('mousemove', function(event) {
         return shuffled.slice(0, num);
     }
 
-    // Seleciona aleatoriamente 3 imagens
+    // Seleciona aleatoriamente 3 imagens no carregamento da página
     const selectedGifs = getRandomImages(gifs, 3);
 
-    // Seleciona um GIF aleatório das 3 imagens selecionadas
-    let gifIndex = Math.floor(Math.random() * selectedGifs.length);
+    document.addEventListener('mousemove', function(event) {
+        // Seleciona um GIF aleatório das 3 imagens selecionadas
+        let gifIndex = Math.floor(Math.random() * selectedGifs.length);
 
-    // Cria um novo elemento de imagem
-    let img = document.createElement('img');
-    img.src = selectedGifs[gifIndex]; // Atribui o GIF selecionado
-    img.classList.add('plant');
+        // Cria um novo elemento de imagem
+        let img = document.createElement('img');
+        img.src = selectedGifs[gifIndex]; // Atribui o GIF selecionado
+        img.classList.add('plant');
 
-    // Define a posição da imagem baseada na posição do mouse
-    img.style.left = event.pageX + 'px';
-    img.style.top = event.pageY + 'px';
+        // Define a posição da imagem baseada na posição do mouse
+        img.style.left = event.pageX + 'px';
+        img.style.top = event.pageY + 'px';
 
-    // Adiciona a imagem ao container
-    container.appendChild(img);
-
-    // As imagens permanecem visíveis, não são removidas
+        // Adiciona a imagem ao container
+        container.appendChild(img);
+    });
 });
