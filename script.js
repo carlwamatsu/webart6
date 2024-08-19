@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Define estilos diretamente para garantir visibilidade
         img.style.position = 'absolute'; // Garantir que a imagem seja posicionada corretamente
-        img.style.left = event.pageX + 'px';
-        img.style.top = event.pageY + 'px';
+        img.style.left = (event.pageX + 10) + 'px'; // Adiciona um pequeno deslocamento
+        img.style.top = (event.pageY + 10) + 'px'; // Adiciona um pequeno deslocamento
         img.style.zIndex = '1000'; // Garante que a imagem fique acima de outros elementos
         img.style.pointerEvents = 'none'; // Evita que a imagem interfira com o evento do mouse
 
