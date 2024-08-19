@@ -58,5 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Adiciona a imagem ao container
         container.appendChild(img);
+
+        // Remove a imagem após um tempo
+        setTimeout(function() {
+            container.removeChild(img);
+        }, 0); // Tempo em milissegundos para a imagem desaparecer (1 segundo)
     });
 });
