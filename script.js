@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seleciona aleatoriamente 3 imagens no carregamento da página
     const selectedGifs = getRandomImages(gifs, 3);
 
+    // Adiciona o evento de movimento do mouse
     document.addEventListener('mousemove', function(event) {
         // Seleciona um GIF aleatório das 3 imagens selecionadas
         let gifIndex = Math.floor(Math.random() * selectedGifs.length);
@@ -49,10 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
         img.classList.add('plant');
 
         // Define a posição da imagem baseada na posição do mouse
+        img.style.position = 'absolute'; // Garantir que a imagem seja posicionada corretamente
         img.style.left = event.pageX + 'px';
         img.style.top = event.pageY + 'px';
 
         // Adiciona a imagem ao container
         container.appendChild(img);
+
+        // Opcional: Remove a imagem após um tempo para evitar sobrecarga
+        setTimeout(() => {
+            container.removeChild(img);
+        }, 2000); // Ajuste o tempo conforme necessário
     });
 });
