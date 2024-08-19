@@ -49,19 +49,17 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = selectedGifs[gifIndex]; // Atribui o GIF selecionado
         img.classList.add('plant');
 
-        // Define estilos diretamente para garantir visibilidade
+        // Define a posição da imagem baseada na posição do mouse
         img.style.position = 'absolute'; // Garantir que a imagem seja posicionada corretamente
-        img.style.left = (event.pageX + 10) + 'px'; // Adiciona um pequeno deslocamento
-        img.style.top = (event.pageY + 10) + 'px'; // Adiciona um pequeno deslocamento
-        img.style.zIndex = '1000'; // Garante que a imagem fique acima de outros elementos
-        img.style.pointerEvents = 'none'; // Evita que a imagem interfira com o evento do mouse
+        img.style.left = event.pageX + 'px';
+        img.style.top = event.pageY + 'px';
 
         // Adiciona a imagem ao container
         container.appendChild(img);
 
-        // Opcional: Remova a imagem após um tempo para evitar sobrecarga
-        // setTimeout(() => {
-        //     container.removeChild(img);
-        // }, 2000); // Ajuste o tempo conforme necessário
+        // Opcional: Remove a imagem após um tempo para evitar sobrecarga
+        setTimeout(() => {
+            container.removeChild(img);
+        }, 2000000000000000000000); // Ajuste o tempo conforme necessário
     });
 });
