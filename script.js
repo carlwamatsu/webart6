@@ -49,10 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = selectedGifs[gifIndex]; // Atribui o GIF selecionado
         img.classList.add('plant');
 
-        // Define a posição da imagem baseada na posição do mouse
+        // Define estilos diretamente para garantir visibilidade
         img.style.position = 'absolute'; // Garantir que a imagem seja posicionada corretamente
         img.style.left = event.pageX + 'px';
         img.style.top = event.pageY + 'px';
+        img.style.zIndex = '1000'; // Garante que a imagem fique acima de outros elementos
+        img.style.pointerEvents = 'none'; // Evita que a imagem interfira com o evento do mouse
 
         // Adiciona a imagem ao container
         container.appendChild(img);
